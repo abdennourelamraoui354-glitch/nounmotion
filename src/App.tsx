@@ -15,7 +15,10 @@ import { PremiumDemoApp } from './premium-demo/PremiumDemoApp'
 import { TawaheenApp } from './tawaheen-alhawa/TawaheenApp'
 import { TurkishHouseApp } from './turkish-house/TurkishHouseApp'
 import { TajRestaurantApp } from './taj-restaurant/TajRestaurantApp'
+import { AroosBaharApp } from './aroos-al-bahar/AroosBaharApp'
+import { MiskRestaurantApp } from './misk-restaurant/MiskRestaurantApp'
 import { AlJoodApp } from './al-jood-azaiba/AlJoodApp'
+import { NabuCafeApp } from './nabu-cafe/NabuCafeApp'
 
 const PREVIEW = new URLSearchParams(window.location.search).get('preview');
 
@@ -50,6 +53,36 @@ function isTajRestaurantHost() {
   );
 }
 
+function isAroosHost() {
+  if (typeof window === 'undefined') return false;
+  const h = window.location.hostname.toLowerCase();
+  return (
+    h === 'aroos.nounmotion.store' ||
+    h.includes('nounmotion-aroos.') ||
+    h.startsWith('nounmotion-aroos')
+  );
+}
+
+function isMiskHost() {
+  if (typeof window === 'undefined') return false;
+  const h = window.location.hostname.toLowerCase();
+  return (
+    h === 'misk.nounmotion.store' ||
+    h.includes('nounmotion-misk.') ||
+    h.startsWith('nounmotion-misk')
+  );
+}
+
+function isNabuHost() {
+  if (typeof window === 'undefined') return false;
+  const h = window.location.hostname.toLowerCase();
+  return (
+    h === 'nabu.nounmotion.store' ||
+    h.includes('nounmotion-nabu.') ||
+    h.startsWith('nounmotion-nabu')
+  );
+}
+
 function isAlJoodHost() {
   if (typeof window === 'undefined') return false;
   const h = window.location.hostname.toLowerCase();
@@ -65,7 +98,10 @@ function App() {
   if (PREVIEW === 'tawaheen-alhawa' || isTawaheenHost()) return <TawaheenApp />;
   if (PREVIEW === 'turkish-house' || isTurkishHouseHost()) return <TurkishHouseApp />;
   if (PREVIEW === 'taj-restaurant' || isTajRestaurantHost()) return <TajRestaurantApp />;
+  if (PREVIEW === 'aroos-al-bahar' || isAroosHost()) return <AroosBaharApp />;
+  if (PREVIEW === 'misk-restaurant' || isMiskHost()) return <MiskRestaurantApp />;
   if (PREVIEW === 'al-jood-azaiba' || isAlJoodHost()) return <AlJoodApp />;
+  if (PREVIEW === 'nabu-cafe' || isNabuHost()) return <NabuCafeApp />;
 
   return (
     <LangProvider>

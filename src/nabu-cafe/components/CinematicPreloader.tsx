@@ -1,0 +1,72 @@
+import { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { GOLD, DARK_BG } from '../lib/business-data'
+
+interface Props {
+  onComplete: () => void
+}
+
+export function CinematicPreloader({ onComplete }: Props) {
+  const overlayRef = useRef<HTMLDivElement>(null)
+  const logoRef = useRef<HTMLDivElement>(null)
+  const barRef = useRef<HTMLDivElement>(null)
+  const barFillRef = useRef<HTMLDivElement>(null)
+  const tagRef = useRef<HTMLParagraphElement>(null)
+
+  useEffect(() => {
+    const tl = gsap.timeline({ onComplete })
+
+    gsap.set(logoRef.current, { scale: 0.85, opacity: 0, filter: 'blur(12px)' })
+    gsap.set(tagRef.current, { opacity: 0, y: 12 })
+    gsap.set(barRef.current, { opacity: 0 })
+
+    tl
+      .to(logoRef.current, { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.9, ease: 'power3.out' }, 0.2)
+      .to(tagRef.current, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, 0.7)
+      .to(barRef.current, { opacity: 1, duration: 0.3 }, 0.9)
+      .fromTo(
+        barFillRef.current,
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.9, ease: 'power2.inOut', transformOrigin: 'left center' },
+        1.0,
+      )
+      .to(overlayRef.current, { yPercent: -100, duration: 0.7, ease: 'power3.inOut' }, 2.1)
+  }, [onComplete])
+
+  return (
+    <div
+      ref={overlayRef}
+      className="fixed inset-0 flex flex-col items-center justify-center z-[9999]"
+      style={{ background: DARK_BG }}
+    >
+      <div ref={logoRef} className="flex flex-col items-center gap-3 mb-10">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+          <circle cx="26" cy="26" r="25" stroke={GOLD} strokeWidth="1.5" />
+          <circle cx="26" cy="26" r="18" stroke={GOLD} strokeWidth="0.5" opacity="0.4" />
+          {/* Stylised Mesopotamian ziggurat motif */}
+          <rect x="18" y="34" width="16" height="3" rx="0.5" fill={GOLD} opacity="0.85" />
+          <rect x="20" y="30" width="12" height="3" rx="0.5" fill={GOLD} opacity="0.85" />
+          <rect x="22" y="26" width="8" height="3" rx="0.5" fill={GOLD} opacity="0.85" />
+          <rect x="24" y="22" width="4" height="3" rx="0.5" fill={GOLD} opacity="0.85" />
+          <rect x="25" y="19" width="2" height="2.5" rx="0.3" fill={GOLD} opacity="0.7" />
+        </svg>
+        <div className="text-center">
+          <p className="text-[10px] tracking-[0.4em] uppercase font-medium" style={{ color: GOLD }}>
+            مقهى نابو
+          </p>
+          <p className="text-white text-[20px] font-light tracking-[0.15em] uppercase mt-0.5">
+            NABU CAFE
+          </p>
+        </div>
+      </div>
+
+      <p ref={tagRef} className="text-[11px] tracking-[0.3em] uppercase mb-8" style={{ color: 'rgba(255,255,255,0.35)' }}>
+        Souq Al Madina · Muscat · Iraqi Cuisine
+      </p>
+
+      <div ref={barRef} className="w-48 h-px" style={{ background: 'rgba(255,255,255,0.08)' }}>
+        <div ref={barFillRef} className="h-full" style={{ background: GOLD, transformOrigin: 'left' }} />
+      </div>
+    </div>
+  )
+}

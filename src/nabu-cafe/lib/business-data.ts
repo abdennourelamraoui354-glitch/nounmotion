@@ -1,0 +1,247 @@
+const BASE = 'https://images.unsplash.com';
+
+export const BUSINESS = {
+  nameEn: 'Nabu Cafe',
+  nameAr: 'مقهى نابو',
+  taglineEn: 'Authentic Iraqi Flavors in the Heart of Muscat',
+  taglineAr: 'نكهات عراقية أصيلة في قلب مسقط',
+  descEn:
+    'Nabu Cafe brings the soul of Mesopotamia to Muscat — hand-crafted kahi with creamy gaimer, aromatic Iraqi coffee, and a warm cultured atmosphere that feels like a journey through ancient Baghdad.',
+  descAr:
+    'يُقدّم مقهى نابو روح بلاد الرافدين إلى مسقط — كاهي مصنوع يدوياً مع قيمر كريمي، قهوة عراقية عطرة، وأجواء ثقافية دافئة تشعرك برحلة عبر بغداد القديمة.',
+  cuisine: 'Iraqi · Middle Eastern',
+  city: 'Muscat, Oman',
+  address: '122 Al Bashair St, Souq Al Madina MQ, Muscat 113, Oman',
+  phone: '+968 77434328',
+  whatsapp: '96877434328',
+  rating: 4.9,
+  reviews: 9,
+  established: 2022,
+  hours: {
+    weekdays: '7:00 AM – 11:00 PM',
+    weekends: '7:00 AM – 11:00 PM',
+  },
+  highlights: [
+    { en: 'Authentic Iraqi Breakfast', ar: 'فطور عراقي أصيل' },
+    { en: 'Hand-Crafted Kahi & Gaimer', ar: 'كاهي وقيمر محلي الصنع' },
+    { en: 'Artisan Pastries & Desserts', ar: 'حلويات ومعجنات حرفية' },
+    { en: 'Mesopotamian Ambiance', ar: 'أجواء رافدينية فريدة' },
+  ],
+  marqueeItems: [
+    'مقهى نابو',
+    'FRESH',
+    'كاهي وقيمر',
+    'CRAFTED',
+    'IRAQI BREAKFAST',
+    'فطور عراقي',
+    'SEASONAL',
+    'قهوة عراقية',
+    'HANDMADE',
+    'كيك التمر',
+    'AUTHENTIC',
+    'MESOPOTAMIAN',
+    'SINCE 2022',
+    'تيراميسو',
+  ],
+  orbitLabels: [
+    { en: 'Kahi', ar: 'كاهي' },
+    { en: 'Gaimer', ar: 'قيمر' },
+    { en: 'Date Cake', ar: 'كيك التمر' },
+    { en: 'Tiramisu', ar: 'تيراميسو' },
+    { en: 'Iraqi Coffee', ar: 'قهوة عراقية' },
+    { en: 'Salads', ar: 'سلطات' },
+  ],
+  menu: [
+    {
+      id: 1,
+      nameAr: 'كاهي وقيمر',
+      nameEn: 'Kahi & Gaimer',
+      descAr: 'العجينة الهشة الذهبية المحشوة بالقيمر الكريمي — طبق الفطور العراقي الأشهر',
+      descEn: "Flaky golden pastry filled with rich creamy gaimer — Iraq's most beloved breakfast dish",
+      price: '2.5 OMR',
+      category: 'فطور',
+      img: `${BASE}/photo-1563729784474-d77dbb933a9e?w=800&q=85&auto=format&fit=crop`,
+      featured: true,
+      size: 'large',
+    },
+    {
+      id: 2,
+      nameAr: 'طبق الفطور الكامل',
+      nameEn: 'Full Iraqi Breakfast',
+      descAr: 'بيض مع الخضار، خبز الزعتر، مخلمة طازجة — فطور متكامل بأصالة عراقية',
+      descEn: 'Eggs with vegetables, zaatar bread & fresh makhlama — a complete Iraqi morning feast',
+      price: '3.8 OMR',
+      category: 'فطور',
+      img: `${BASE}/photo-1540189549336-e6e99c3679fe?w=800&q=85&auto=format&fit=crop`,
+      featured: false,
+      size: 'small',
+    },
+    {
+      id: 3,
+      nameAr: 'توست الأفوكادو مع البيض',
+      nameEn: 'Avocado Toast & Poached Eggs',
+      descAr: 'خبز محمص طازج مع أفوكادو ناعم وبيض مسلوق على الطريقة الحديثة',
+      descEn: 'Toasted sourdough with silky avocado spread and perfectly poached eggs',
+      price: '3.2 OMR',
+      category: 'فطور',
+      img: `${BASE}/photo-1541519227354-08fa5d50c820?w=800&q=85&auto=format&fit=crop`,
+      featured: false,
+      size: 'small',
+    },
+    {
+      id: 4,
+      nameAr: 'سلطة الستيك بالبيستو',
+      nameEn: 'Steak Salad with Pesto',
+      descAr: 'شرائح ستيك طازجة فوق سلطة خضراء مع صلصة البيستو الإيطالية',
+      descEn: 'Fresh steak slices over a crisp green salad with aromatic pesto dressing',
+      price: '4.5 OMR',
+      category: 'سلطات',
+      img: `${BASE}/photo-1512621776951-a57141f2eefd?w=800&q=85&auto=format&fit=crop`,
+      featured: false,
+      size: 'small',
+    },
+    {
+      id: 5,
+      nameAr: 'كيك التمر اليدوي',
+      nameEn: 'Handmade Date Cake',
+      descAr: 'كيك التمر الرافديني المصنوع يدوياً — حلاوة طبيعية بلمسة عراقية أصيلة',
+      descEn: 'Hand-crafted Mesopotamian date cake — natural sweetness with an authentic Iraqi touch',
+      price: '1.8 OMR',
+      category: 'حلويات',
+      img: `${BASE}/photo-1563805042-7684c019e1cb?w=800&q=85&auto=format&fit=crop`,
+      featured: false,
+      size: 'small',
+    },
+    {
+      id: 6,
+      nameAr: 'القهوة العراقية المميزة',
+      nameEn: 'Iraqi Specialty Coffee',
+      descAr: 'قهوة عراقية عطرة فريدة من نوعها — مزيج خاص يُعدّ يومياً بعناية',
+      descEn: 'Uniquely aromatic Iraqi-style coffee — a signature daily blend crafted with care',
+      price: '1.5 OMR',
+      category: 'مشروبات',
+      img: `${BASE}/photo-1495474472287-4d71bcdd2085?w=800&q=85&auto=format&fit=crop`,
+      featured: false,
+      size: 'small',
+    },
+  ],
+  story: [
+    {
+      year: '٢٠٢٢',
+      titleEn: 'Born in Muscat',
+      titleAr: 'وُلد في مسقط',
+      textEn:
+        'Nabu Cafe opened its doors in Souq Al Madina with one vision: to bring the authentic flavors and warm spirit of Iraqi hospitality to the heart of Muscat.',
+      textAr:
+        'فتح مقهى نابو أبوابه في سوق المدينة برؤية واحدة: إحضار النكهات الأصيلة وروح الضيافة العراقية الدافئة إلى قلب مسقط.',
+    },
+    {
+      year: '٢٠٢٣',
+      titleEn: 'Crafted With Passion',
+      titleAr: 'مصنوع بشغف',
+      textEn:
+        "Word spread quickly — Nabu became Muscat's hidden gem for handmade kahi, artisan pastries, and that atypical coffee experience that keeps guests coming back.",
+      textAr:
+        'انتشرت الشهرة بسرعة — أصبح نابو جوهرة مسقط الخفية للكاهي المصنوع يدوياً، والمعجنات الحرفية، وتجربة القهوة الفريدة التي تجعل الضيوف يعودون.',
+    },
+    {
+      year: 'اليوم',
+      titleEn: 'A Living Legacy',
+      titleAr: 'إرث حيّ',
+      textEn:
+        'Every dish at Nabu tells a story of Mesopotamia — from the golden kahi at dawn to the handcrafted cakes that close a perfect evening. A taste of Iraq, right here in Muscat.',
+      textAr:
+        'كل طبق في نابو يحكي قصة بلاد الرافدين — من الكاهي الذهبي عند الفجر إلى الكيك المصنوع يدوياً الذي يُتوّج مساءً مثالياً. طعم العراق، هنا في مسقط.',
+    },
+  ],
+  heroSlides: [
+    {
+      img: `${BASE}/photo-1445116572257-6cd4d61ed2e3?w=1920&q=85&auto=format&fit=crop`,
+      headlineEn: 'Soul of Mesopotamia',
+      headlineAr: 'روح الرافدين',
+      subEn: 'Authentic Iraqi breakfast & handcrafted flavors in Muscat',
+      subAr: 'فطور عراقي أصيل ونكهات حرفية في قلب مسقط',
+    },
+    {
+      img: `${BASE}/photo-1504674900247-0877df9cc836?w=1920&q=85&auto=format&fit=crop`,
+      headlineEn: 'Crafted Daily',
+      headlineAr: 'يُصنع كل يوم',
+      subEn: 'Kahi, gaimer, artisan cakes & specialty coffee — made fresh every morning',
+      subAr: 'كاهي وقيمر، كيك حرفي وقهوة مميزة — طازجة كل صباح',
+    },
+    {
+      img: `${BASE}/photo-1559339352-11d035aa65de?w=1920&q=85&auto=format&fit=crop`,
+      headlineEn: 'Soothing Vibes',
+      headlineAr: 'أجواء هادئة',
+      subEn: 'Good music, cultured ambiance & high quality food — all in one place',
+      subAr: 'موسيقى رائعة، أجواء مثقفة وطعام بجودة عالية — كل شيء في مكان واحد',
+    },
+  ],
+  galleryImages: [
+    {
+      src: `${BASE}/photo-1559339352-11d035aa65de?w=900&q=85&auto=format&fit=crop`,
+      caption: 'The Ambiance',
+    },
+    {
+      src: `${BASE}/photo-1517248135467-4c7edcad34c4?w=900&q=85&auto=format&fit=crop`,
+      caption: 'The Interior',
+    },
+    {
+      src: `${BASE}/photo-1445116572257-6cd4d61ed2e3?w=900&q=85&auto=format&fit=crop`,
+      caption: 'The Cafe',
+    },
+    {
+      src: `${BASE}/photo-1563729784474-d77dbb933a9e?w=900&q=85&auto=format&fit=crop`,
+      caption: 'Kahi & Gaimer',
+    },
+    {
+      src: `${BASE}/photo-1495474472287-4d71bcdd2085?w=900&q=85&auto=format&fit=crop`,
+      caption: 'Specialty Coffee',
+    },
+  ],
+  testimonials: [
+    {
+      nameEn: 'MoeofOman',
+      nameAr: 'مو من عُمان',
+      rating: 5,
+      textEn: 'Beautiful vibes... Food with quality. Kahi & Gaimer is the best! Absolutely a must-visit in Muscat.',
+      textAr: 'أجواء جميلة... طعام بجودة عالية. الكاهي والقيمر هو الأفضل! زيارة لا غنى عنها في مسقط.',
+      service: 'Kahi & Gaimer',
+    },
+    {
+      nameEn: 'Naureen Y',
+      nameAr: 'نورين ي',
+      rating: 5,
+      textEn: 'Nabu is absolutely a wonderful cafe with interesting Iraqi cuisines, great ambience, and great service.',
+      textAr: 'نابو مقهى رائع حقاً يقدم مأكولات عراقية مثيرة للاهتمام، مع أجواء رائعة وخدمة ممتازة.',
+      service: 'Iraqi Cuisine',
+    },
+    {
+      nameEn: 'Waqaar M',
+      nameAr: 'وقار م',
+      rating: 5,
+      textEn: 'Incredible cakes hand made with brilliant service... portions are big. Will definitely come back!',
+      textAr: 'كيك رائع مصنوع يدوياً مع خدمة ممتازة... الكميات كبيرة. بالتأكيد سأعود!',
+      service: 'Handmade Cakes',
+    },
+    {
+      nameEn: 'Aneesnow',
+      nameAr: 'أنيس',
+      rating: 5,
+      textEn: 'High quality food, well priced, good music and soothing atmosphere. A hidden gem in Muscat.',
+      textAr: 'طعام بجودة عالية، سعر مناسب، موسيقى رائعة وأجواء هادئة. جوهرة خفية في مسقط.',
+      service: 'Full Experience',
+    },
+  ],
+  dishOrbitImg: `${BASE}/photo-1563729784474-d77dbb933a9e?w=600&q=85&auto=format&fit=crop`,
+  storyBg: `${BASE}/photo-1559339352-11d035aa65de?w=1400&q=80&auto=format&fit=crop`,
+  reservationBg: `${BASE}/photo-1445116572257-6cd4d61ed2e3?w=1400&q=80&auto=format&fit=crop`,
+  mapsEmbedSrc:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.5!2d58.4529152!3d23.5997597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91ff2d87566bcd%3A0xeeeec7afe0bb58ac!2sNabu+Cafe!5e0!3m2!1sen!2som!4v1718000000000!5m2!1sen!2som',
+  mapsUrl: 'https://maps.app.goo.gl/qwnFMSmdBWhZNcoh7',
+};
+
+export const GOLD = '#C9A96E';
+export const GOLD_LIGHT = '#E8C87A';
+export const DARK_BG = '#0A0908';
+export const CREAM = '#FAF7F2';
