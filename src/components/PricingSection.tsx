@@ -1,24 +1,49 @@
 import { motion } from 'framer-motion'
-import { Check } from 'lucide-react'
+import { Check, X } from 'lucide-react'
 import { FadeIn } from './ui/FadeIn'
 import { MagneticButton } from './ui/MagneticButton'
-import { WA_LINK } from '../config'
 import { useLang } from '../contexts/LangContext'
-
-const EMAIL = 'contact@nounmotion.store'
 
 const plans = [
   {
     key: 'starter',
     en: {
-      name: 'Starter', price: '$399', period: 'one-time',
-      desc: 'Perfect for local businesses that need a clean, fast, professional online presence.',
-      features: ['Custom homepage design', 'Mobile-first build', 'WhatsApp CTA button', 'Contact form', 'Google Maps embed', '1 round of revisions', 'Fast loading & SEO basics'],
+      name: 'Starter',
+      price: '4,500',
+      currency: 'SAR',
+      period: 'one-time',
+      delivery: '10 days · 1 revision',
+      desc: 'Clean, fast, professional website for local businesses ready to grow online.',
+      features: [
+        'Custom homepage design',
+        'Mobile-first build',
+        'WhatsApp CTA button',
+        'Contact form',
+        'Google Maps embed',
+        '1 round of revisions',
+        'Fast loading & SEO basics',
+      ],
+      missing: ['Cinematic animations', 'Bilingual AR/EN', '3D hero section'],
+      waMsg: 'Hi! I\'m interested in the Starter website package (4,500 SAR). Can I get a free preview first?',
     },
     ar: {
-      name: 'المبتدئ', price: '$399', period: 'دفعة واحدة',
-      desc: 'مثالي للشركات المحلية التي تحتاج إلى حضور رقمي سريع واحترافي.',
-      features: ['تصميم صفحة رئيسية مخصصة', 'بناء أولوية الموبايل', 'زر واتساب CTA', 'نموذج تواصل', 'خريطة Google', 'جولة تعديلات واحدة', 'تحميل سريع وأساسيات SEO'],
+      name: 'المبتدئ',
+      price: '٤٬٥٠٠',
+      currency: 'ريال',
+      period: 'دفعة واحدة',
+      delivery: '١٠ أيام · تعديل واحد',
+      desc: 'موقع احترافي وسريع للشركات المحلية الجاهزة للنمو أونلاين.',
+      features: [
+        'تصميم صفحة رئيسية مخصصة',
+        'بناء أولوية الموبايل',
+        'زر واتساب CTA',
+        'نموذج تواصل',
+        'خريطة Google',
+        'جولة تعديلات واحدة',
+        'تحميل سريع وأساسيات SEO',
+      ],
+      missing: ['رسوم سينمائية', 'عربي / إنجليزي', 'هيرو ثلاثي الأبعاد'],
+      waMsg: 'مرحبا! أريد الاستفسار عن باقة المبتدئ (٤٬٥٠٠ ريال). هل يمكنني الحصول على معاينة مجانية؟',
     },
     accent: '#7621B0',
     popular: false,
@@ -26,29 +51,91 @@ const plans = [
   {
     key: 'pro',
     en: {
-      name: 'Pro', price: '$799', period: 'one-time',
-      desc: 'A complete website with all pages, copy, and WhatsApp booking flow. The most popular option.',
-      features: ['Everything in Starter', '5+ page website', 'Bilingual Arabic / English', 'WhatsApp booking flow', 'Gallery or portfolio section', 'FAQ section', 'Premium copywriting', '3 rounds of revisions', 'Domain + hosting guidance'],
+      name: 'Pro ⭐',
+      price: '8,500',
+      currency: 'SAR',
+      period: 'one-time',
+      delivery: '7 days · 3 revisions',
+      desc: 'Cinematic animations, bilingual support, gallery & WhatsApp booking flow. Our most popular package.',
+      features: [
+        'Everything in Starter',
+        'Cinematic scroll animations',
+        'Bilingual Arabic / English',
+        'WhatsApp booking flow',
+        'Gallery or portfolio section',
+        'FAQ section',
+        'Premium copywriting',
+        '3 rounds of revisions',
+        'Domain + hosting guidance',
+      ],
+      missing: ['3D hero section', '30-day support'],
+      waMsg: "Hi! I'm interested in the Pro website package (8,500 SAR). Can I get a free preview first?",
     },
     ar: {
-      name: 'المحترف', price: '$799', period: 'دفعة واحدة',
-      desc: 'موقع كامل مع جميع الصفحات والنصوص وتدفق حجز واتساب. الخيار الأكثر طلباً.',
-      features: ['كل ما في المبتدئ', '٥+ صفحات موقع', 'عربي / إنجليزي ثنائي اللغة', 'تدفق حجز واتساب', 'قسم معرض أو محفظة', 'قسم FAQ', 'كتابة نصوص متميزة', '٣ جولات تعديلات', 'إرشادات الدومين والاستضافة'],
+      name: 'المحترف ⭐',
+      price: '٨٬٥٠٠',
+      currency: 'ريال',
+      period: 'دفعة واحدة',
+      delivery: '٧ أيام · ٣ تعديلات',
+      desc: 'رسوم سينمائية، ثنائي اللغة، معرض وتدفق حجز واتساب. الباقة الأكثر طلباً.',
+      features: [
+        'كل ما في المبتدئ',
+        'رسوم متحركة سينمائية',
+        'عربي / إنجليزي ثنائي اللغة',
+        'تدفق حجز واتساب',
+        'قسم معرض أو محفظة',
+        'قسم FAQ',
+        'كتابة نصوص متميزة',
+        '٣ جولات تعديلات',
+        'إرشادات الدومين والاستضافة',
+      ],
+      missing: ['هيرو ثلاثي الأبعاد', 'دعم ٣٠ يوماً'],
+      waMsg: 'مرحبا! أريد الاستفسار عن باقة المحترف (٨٬٥٠٠ ريال). هل يمكنني الحصول على معاينة مجانية؟',
     },
     accent: '#B600A8',
     popular: true,
   },
   {
-    key: 'custom',
+    key: 'premium',
     en: {
-      name: 'Custom', price: null, period: null,
-      desc: 'For businesses with unique requirements — e-commerce, booking systems, or multi-location brands.',
-      features: ['Custom scope & timeline', 'E-commerce ready', 'Booking system integration', 'Multi-language support', 'Advanced animations', 'Priority delivery', 'Dedicated support'],
+      name: 'Premium',
+      price: '14,000',
+      currency: 'SAR',
+      period: 'one-time',
+      delivery: '5 days · 5 revisions',
+      desc: 'Full cinematic experience with 3D hero, advanced SEO, and 30 days of dedicated post-launch support.',
+      features: [
+        'Everything in Pro',
+        '3D hero section',
+        'Advanced scroll animations',
+        'Full SEO optimization',
+        '5 rounds of revisions',
+        '30-day post-launch support',
+        'Priority delivery',
+        'Dedicated project manager',
+      ],
+      missing: [],
+      waMsg: "Hi! I'm interested in the Premium website package (14,000 SAR). Can I get a free preview first?",
     },
     ar: {
-      name: 'مخصص', price: null, period: null,
-      desc: 'للشركات ذات المتطلبات الخاصة — التجارة الإلكترونية أو أنظمة الحجز أو العلامات متعددة المواقع.',
-      features: ['نطاق وجدول زمني مخصص', 'جاهز للتجارة الإلكترونية', 'تكامل نظام الحجز', 'دعم متعدد اللغات', 'رسوم متحركة متقدمة', 'تسليم ذو أولوية', 'دعم مخصص'],
+      name: 'بريميوم',
+      price: '١٤٬٠٠٠',
+      currency: 'ريال',
+      period: 'دفعة واحدة',
+      delivery: '٥ أيام · ٥ تعديلات',
+      desc: 'تجربة سينمائية كاملة مع هيرو ثلاثي الأبعاد وتحسين SEO ودعم ٣٠ يوماً.',
+      features: [
+        'كل ما في المحترف',
+        'هيرو ثلاثي الأبعاد',
+        'رسوم تمرير متقدمة',
+        'تحسين SEO كامل',
+        '٥ جولات تعديلات',
+        'دعم ٣٠ يوماً بعد الإطلاق',
+        'تسليم ذو أولوية',
+        'مدير مشروع مخصص',
+      ],
+      missing: [],
+      waMsg: 'مرحبا! أريد الاستفسار عن باقة بريميوم (١٤٬٠٠٠ ريال). هل يمكنني الحصول على معاينة مجانية؟',
     },
     accent: '#264B9C',
     popular: false,
@@ -66,18 +153,30 @@ export function PricingSection() {
         style={{ background: 'radial-gradient(ellipse, #B600A8, transparent)' }} />
 
       <div className="max-w-5xl mx-auto relative">
-        <FadeIn className="mb-16">
+        <FadeIn className="mb-10">
           <p className="text-xs uppercase tracking-[0.35em] text-[rgba(215,226,234,0.38)] mb-4" style={fontStyle}>
             {t.pricing.eyebrow}
           </p>
-          <h2 className="text-fluid-xl font-black uppercase leading-none tracking-tight gradient-text" style={fontStyle}>
+          <h2 className="text-fluid-xl font-black uppercase leading-none tracking-tight gradient-text mb-6" style={fontStyle}>
             {t.pricing.heading}
           </h2>
+          {/* Free preview banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full"
+            style={{ background: 'rgba(182,0,168,0.12)', border: '1px solid rgba(182,0,168,0.3)' }}>
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#B600A8' }} />
+            <span className="text-sm font-semibold" style={{ color: '#B600A8', ...fontStyle }}>
+              {isAr ? 'معاينة مجانية — ٠ ريال' : 'Free preview — 0 SAR'}
+            </span>
+          </motion.div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-5 mt-6">
           {plans.map((plan, i) => {
             const copy = isAr ? plan.ar : plan.en
+            const waHref = `https://wa.me/966500000000?text=${encodeURIComponent(copy.waMsg)}`
             return (
               <motion.div
                 key={plan.key}
@@ -96,6 +195,7 @@ export function PricingSection() {
                   boxShadow: plan.popular
                     ? `0 0 0 1px rgba(215,226,234,0.04), 0 32px 64px rgba(0,0,0,0.6), 0 0 60px ${plan.accent}15`
                     : '0 8px 32px rgba(0,0,0,0.4)',
+                  transform: plan.popular ? 'scale(1.02)' : 'scale(1)',
                 }}
               >
                 {plan.popular && (
@@ -107,55 +207,49 @@ export function PricingSection() {
                   </div>
                 )}
 
-                <div className="mb-6">
+                <div className="mb-5">
                   <p className="text-xs font-semibold uppercase tracking-widest mb-2"
                     style={{ color: plan.accent, fontFamily: isAr ? 'Tajawal, sans-serif' : undefined }}>
                     {copy.name}
                   </p>
-                  {copy.price ? (
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-black text-[#D7E2EA]">{copy.price}</span>
-                      <span className="text-sm text-[rgba(215,226,234,0.45)]" style={fontStyle}>{copy.period}</span>
-                    </div>
-                  ) : (
-                    <span className="text-2xl font-black text-[#D7E2EA]" style={fontStyle}>{t.pricing.customQuote}</span>
-                  )}
+                  <div className="flex items-baseline gap-1.5 flex-wrap">
+                    <span className="text-4xl font-black text-[#D7E2EA]">{copy.price}</span>
+                    <span className="text-base font-semibold text-[rgba(215,226,234,0.55)]" style={fontStyle}>{copy.currency}</span>
+                  </div>
+                  <p className="text-[11px] mt-1 text-[rgba(215,226,234,0.35)] uppercase tracking-wider" style={fontStyle}>{copy.delivery}</p>
                   <p className="text-sm text-[rgba(215,226,234,0.5)] mt-3 leading-relaxed" style={fontStyle}>{copy.desc}</p>
                 </div>
 
-                <ul className="space-y-2.5 mb-8 flex-1">
+                <ul className="space-y-2 mb-6 flex-1">
                   {copy.features.map((f, fi) => (
                     <li key={fi} className="flex items-start gap-2.5">
                       <Check className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: plan.accent }} />
                       <span className="text-sm text-[rgba(215,226,234,0.65)]" style={fontStyle}>{f}</span>
                     </li>
                   ))}
+                  {copy.missing.map((f, fi) => (
+                    <li key={`m-${fi}`} className="flex items-start gap-2.5 opacity-30">
+                      <X className="w-3.5 h-3.5 mt-0.5 shrink-0 text-[rgba(215,226,234,0.4)]" />
+                      <span className="text-sm text-[rgba(215,226,234,0.4)]" style={fontStyle}>{f}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 <MagneticButton>
-                  {copy.price ? (
-                    <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
-                      className="block w-full text-center py-3.5 rounded-2xl text-sm font-bold uppercase tracking-wider transition-all duration-200"
-                      style={plan.popular ? {
-                        background: `linear-gradient(90deg, ${plan.accent}, #7621B0)`,
-                        color: '#fff',
-                        boxShadow: `0 8px 32px ${plan.accent}35`,
-                      } : {
-                        background: 'rgba(215,226,234,0.06)',
-                        color: 'rgba(215,226,234,0.7)',
-                        border: '1px solid rgba(215,226,234,0.15)',
-                      }}
-                    >
-                      {t.pricing.cta}
-                    </a>
-                  ) : (
-                    <a href={`mailto:${EMAIL}`}
-                      className="block w-full text-center py-3.5 rounded-2xl text-sm font-bold uppercase tracking-wider transition-all duration-200"
-                      style={{ background: 'rgba(38,75,156,0.15)', color: '#264B9C', border: '1px solid rgba(38,75,156,0.3)' }}
-                    >
-                      {t.pricing.letsTalk}
-                    </a>
-                  )}
+                  <a href={waHref} target="_blank" rel="noopener noreferrer"
+                    className="block w-full text-center py-3.5 rounded-2xl text-sm font-bold uppercase tracking-wider transition-all duration-200"
+                    style={plan.popular ? {
+                      background: `linear-gradient(90deg, ${plan.accent}, #7621B0)`,
+                      color: '#fff',
+                      boxShadow: `0 8px 32px ${plan.accent}35`,
+                    } : {
+                      background: 'rgba(215,226,234,0.06)',
+                      color: 'rgba(215,226,234,0.7)',
+                      border: '1px solid rgba(215,226,234,0.15)',
+                    }}
+                  >
+                    {t.pricing.cta}
+                  </a>
                 </MagneticButton>
               </motion.div>
             )
