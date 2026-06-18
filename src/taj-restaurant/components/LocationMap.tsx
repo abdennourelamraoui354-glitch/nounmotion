@@ -31,7 +31,7 @@ export function LocationMap() {
               Visit Our Restaurant
             </h2>
             <p className="mb-6 text-base leading-relaxed" style={{ color: `${CREAM}70`, fontFamily: 'DM Sans, sans-serif' }}>
-              Located in the heart of Muscat, Turkish House Restaurant welcomes you to a warm Ottoman dining experience every day of the week.
+              Located in the heart of Muscat, Taj Restaurant welcomes you to a royal Indian dining experience — rich biryanis, tandoor-fired breads and Mughlai curries, every day of the week.
             </p>
 
             <div className="space-y-4">
@@ -80,7 +80,7 @@ export function LocationMap() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Turkish House Restaurant Location"
+              title="Taj Restaurant Location"
             />
           </div>
         </motion.div>

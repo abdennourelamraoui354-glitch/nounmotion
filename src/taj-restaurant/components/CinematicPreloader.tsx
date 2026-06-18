@@ -39,36 +39,26 @@ export function CinematicPreloader({ onComplete }: Props) {
       style={{ background: DARK_BG }}
     >
       <div ref={logoRef} className="flex flex-col items-center gap-4 mb-10">
-        {/* Ottoman crescent + star motif */}
+        {/* Crown / Taj motif */}
         <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
           <circle cx="28" cy="28" r="27" stroke={GOLD} strokeWidth="1.5" />
           <circle cx="28" cy="28" r="20" stroke={GOLD} strokeWidth="0.5" opacity="0.3" />
-          {/* Crescent */}
-          <path
-            d="M22 18 A12 12 0 1 0 22 38 A9 9 0 1 1 22 18 Z"
-            fill={GOLD}
-            opacity="0.9"
-          />
-          {/* Star */}
-          <polygon
-            points="36,22 37.2,25.6 41,25.6 38,27.8 39.1,31.4 36,29.2 32.9,31.4 34,27.8 31,25.6 34.8,25.6"
-            fill={GOLD}
-            opacity="0.9"
-          />
+          <path d="M14 38 L14 29 L20 34 L28 18 L36 34 L42 29 L42 38 Z" fill={GOLD} opacity="0.9" />
+          <rect x="14" y="38" width="28" height="3" rx="1.5" fill={GOLD} opacity="0.6" />
         </svg>
         <div className="text-center">
           <p className="text-[10px] tracking-[0.45em] uppercase font-medium" style={{ color: GOLD }}>
-            TURKISH HOUSE
+            TAJ RESTAURANT
           </p>
           <p className="font-bold tracking-wider mt-0.5" style={{ fontFamily: 'Tajawal, sans-serif', color: GOLD, fontSize: 18 }}>
-            مطعم البيت التركي
+            مطعم تاج
           </p>
         </div>
       </div>
 
       <p ref={tagRef} className="text-[11px] tracking-[0.3em] uppercase mb-8"
         style={{ color: 'rgba(255,255,255,0.35)' }}>
-        Muscat, Oman · Est. 2010
+        Muscat, Oman · Est. 2005
       </p>
 
       <div ref={barRef} className="w-48 h-px" style={{ background: 'rgba(255,255,255,0.08)' }}>

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { BUSINESS } from '../lib/business-data';
 
 export function WhatsAppFloat() {
-  const href = `https://wa.me/${BUSINESS.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('مرحباً، أود حجز طاولة في مطعم البيت التركي')}`;
+  const href = `https://wa.me/${BUSINESS.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('مرحباً، أود حجز طاولة في مطعم تاج')}`;
 
   return (
     <motion.a

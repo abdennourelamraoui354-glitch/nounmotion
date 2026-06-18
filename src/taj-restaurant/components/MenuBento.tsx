@@ -5,7 +5,7 @@ import { BUSINESS, GOLD, DARK_BG, CREAM } from '../lib/business-data';
 export function MenuBento() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
-  const waHref = `https://wa.me/${BUSINESS.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('أود الاستفسار عن قائمة مطعم البيت التركي')}`;
+  const waHref = `https://wa.me/${BUSINESS.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('أود الاستفسار عن قائمة مطعم تاج')}`;
 
   return (
     <section id="menu" ref={ref} className="py-24 px-6 md:px-12" style={{ background: '#0D0B0A' }}>

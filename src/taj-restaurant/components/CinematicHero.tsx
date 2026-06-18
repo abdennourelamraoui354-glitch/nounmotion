@@ -34,7 +34,7 @@ export function CinematicHero() {
 
   const slide = BUSINESS.heroSlides[current];
   const words = slide.headlineEn.split(' ');
-  const waHref = `https://wa.me/${BUSINESS.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('مرحباً، أود حجز طاولة في مطعم البيت التركي')}`;
+  const waHref = `https://wa.me/${BUSINESS.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('مرحباً، أود حجز طاولة في مطعم تاج')}`;
 
   return (
     <section
@@ -262,7 +262,7 @@ export function CinematicHero() {
           { label: 'Rating', value: `${BUSINESS.rating}★` },
           { label: 'Reviews', value: `${BUSINESS.reviews}+` },
           { label: 'Since', value: String(BUSINESS.established) },
-          { label: 'Cuisine', value: 'Turkish' },
+          { label: 'Cuisine', value: 'Indian' },
         ].map(({ label, value }, i) => (
           <div key={i} className="flex flex-col items-center px-4 border-r last:border-0" style={{ borderColor: `${GOLD}20` }}>
             <span style={{ color: GOLD, fontFamily: 'Cormorant Garamond, serif', fontSize: 22, fontWeight: 600 }}>{value}</span>

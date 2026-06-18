@@ -6,7 +6,7 @@ import { MagneticButton } from './MagneticButton';
 export function ReservationCTA() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
-  const waHref = `https://wa.me/${BUSINESS.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('مرحباً، أود حجز طاولة في مطعم البيت التركي')}`;
+  const waHref = `https://wa.me/${BUSINESS.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('مرحباً، أود حجز طاولة في مطعم تاج')}`;
 
   return (
     <section id="reserve" ref={ref} className="relative py-32 px-6 md:px-12 overflow-hidden" style={{ background: DARK_BG }}>
@@ -59,7 +59,7 @@ export function ReservationCTA() {
               lineHeight: 1.1,
             }}
           >
-            An Evening in Istanbul
+            A Royal Evening at Taj
           </h2>
 
           <p className="mb-2 text-lg" style={{ fontFamily: 'Tajawal, sans-serif', color: `${GOLD}CC`, direction: 'rtl' }}>
