@@ -1,0 +1,247 @@
+const BASE_IMG = 'https://images.unsplash.com';
+
+export const BUSINESS = {
+  nameEn: 'Al Jood Lebanese Restaurant',
+  nameAr: 'مطعم الجود اللبناني',
+  taglineEn: 'Authentic Lebanese Flavors in the Heart of Muscat',
+  taglineAr: 'نكهات لبنانية أصيلة في قلب مسقط',
+  descEn:
+    'Al Jood brings the soul of Beirut to Azaiba — slow-cooked meats, hand-pressed mezze, and the warm hospitality of Lebanon, served in an atmosphere that feels like home.',
+  descAr:
+    'يُقدّم مطعم الجود روح بيروت إلى العذيبة — لحوم مطهوة على نار هادئة، مزة طازجة، وضيافة لبنانية دافئة في أجواء تشعرك بالبيت.',
+  cuisine: 'Lebanese · Levantine',
+  city: 'Muscat, Oman',
+  address: 'Azaiba, Muscat, Sultanate of Oman',
+  phone: '+968 2448 0000',
+  whatsapp: '+96824480000',
+  rating: 4.6,
+  reviews: 890,
+  established: 2010,
+  hours: {
+    weekdays: '12:00 PM – 12:00 AM',
+    weekends: '12:00 PM – 1:00 AM',
+  },
+  highlights: [
+    { en: 'Authentic Lebanese Recipes', ar: 'وصفات لبنانية أصيلة' },
+    { en: 'Fresh Daily Mezze', ar: 'مزة طازجة يومياً' },
+    { en: 'Charcoal Grilled Meats', ar: 'مشاوي على الفحم' },
+    { en: 'Family & Group Dining', ar: 'طعام عائلي وجماعي' },
+  ],
+  marqueeItems: [
+    'الجود اللبناني',
+    'FRESH',
+    'SEASONAL',
+    'مزة بيروتية',
+    'CRAFTED',
+    'كفتة لبنانية',
+    'AUTHENTIC',
+    'فتوش طازج',
+    'LEVANTINE',
+    'حمص كريمي',
+    'CHARCOAL GRILLED',
+    'كنافة بالجبن',
+    'SINCE 2010',
+    'شيش طاووق',
+  ],
+  orbitLabels: [
+    { en: 'Mezze', ar: 'مزة' },
+    { en: 'Kafta', ar: 'كفتة' },
+    { en: 'Hummus', ar: 'حمص' },
+    { en: 'Fattoush', ar: 'فتوش' },
+    { en: 'Tabbouleh', ar: 'تبولة' },
+    { en: 'Knafeh', ar: 'كنافة' },
+  ],
+  menu: [
+    {
+      id: 1,
+      nameAr: 'المزة اللبنانية المشكلة',
+      nameEn: 'Lebanese Mixed Mezze',
+      descAr: 'حمص، بابا غنوج، متبل، لبنة، زيتون، وخبز مرقوق طازج — طبق البدايات الأصيل',
+      descEn: 'Hummus, baba ghanoush, mutabbal, labneh, olives & fresh markouk bread — the authentic starter plate',
+      price: '5.5 OMR',
+      category: 'مقبلات',
+      img: `${BASE_IMG}/photo-1540189549336-e6e99c3679fe?w=800&q=85&auto=format&fit=crop`,
+      featured: true,
+      size: 'large',
+    },
+    {
+      id: 2,
+      nameAr: 'الكفتة اللبنانية',
+      nameEn: 'Lebanese Kafta',
+      descAr: 'كفتة مفرومة بالبهارات اللبنانية مشوية على الفحم',
+      descEn: 'Spiced ground lamb charcoal-grilled on skewers',
+      price: '3.8 OMR',
+      category: 'مشاوي',
+      img: `${BASE_IMG}/photo-1529042410759-befb1204b468?w=800&q=85&auto=format&fit=crop`,
+      featured: false,
+      size: 'small',
+    },
+    {
+      id: 3,
+      nameAr: 'شيش طاووق بيروتي',
+      nameEn: 'Beirut Shish Tawook',
+      descAr: 'دجاج متبّل بالثوم وعصير الليمون مشوي على الفحم',
+      descEn: 'Garlic-lemon marinated chicken, charcoal-grilled',
+      price: '3.5 OMR',
+      category: 'مشاوي',
+      img: `${BASE_IMG}/photo-1548943487-a2e4e43b4853?w=800&q=85&auto=format&fit=crop`,
+      featured: false,
+      size: 'small',
+    },
+    {
+      id: 4,
+      nameAr: 'الفتوش الشامي',
+      nameEn: 'Levantine Fattoush',
+      descAr: 'سلطة أعشاب طازجة مع خبز محمص ودبس الرمان',
+      descEn: 'Fresh herb salad with toasted bread & pomegranate molasses',
+      price: '2.2 OMR',
+      category: 'سلطات',
+      img: `${BASE_IMG}/photo-1512621776951-a57141f2eefd?w=800&q=85&auto=format&fit=crop`,
+      featured: false,
+      size: 'small',
+    },
+    {
+      id: 5,
+      nameAr: 'حمص بالطحينة',
+      nameEn: 'Hummus Tahini',
+      descAr: 'حمص ناعم محضر يومياً بالطحينة الفاخرة وزيت الزيتون البكر',
+      descEn: 'Silky hummus prepared fresh daily with premium tahini & extra-virgin olive oil',
+      price: '1.8 OMR',
+      category: 'مقبلات',
+      img: `${BASE_IMG}/photo-1577303935007-0d306ee638cf?w=800&q=85&auto=format&fit=crop`,
+      featured: false,
+      size: 'small',
+    },
+    {
+      id: 6,
+      nameAr: 'كنافة بالجبن',
+      nameEn: 'Knafeh Bil Jibn',
+      descAr: 'كنافة بالجبن العكاوي والقطر، محضرة يومياً',
+      descEn: 'Shredded phyllo with akkawi cheese, rose-water syrup, made fresh daily',
+      price: '1.5 OMR',
+      category: 'حلويات',
+      img: `${BASE_IMG}/photo-1571167530149-c1105da4e5e4?w=800&q=85&auto=format&fit=crop`,
+      featured: false,
+      size: 'small',
+    },
+  ],
+  story: [
+    {
+      year: '٢٠١٠',
+      titleEn: 'Born in Azaiba',
+      titleAr: 'وُلد في العذيبة',
+      textEn:
+        'Founded with a single mission: to serve the most authentic Lebanese table in Muscat, using recipes carried from the mountains of Lebanon.',
+      textAr:
+        'أُسِّس بمهمة واحدة: تقديم أصدق مائدة لبنانية في مسقط، بوصفات جُلبت من جبال لبنان.',
+    },
+    {
+      year: '٢٠١٦',
+      titleEn: 'A Growing Family',
+      titleAr: 'عائلة تنمو',
+      textEn:
+        'Word spread through Muscat — Al Jood became the gathering place for families, celebrations, and anyone craving real Lebanese soul food.',
+      textAr:
+        'انتشر الصيت في مسقط — أصبح الجود ملتقى العائلات والأفراح وكل من يشتاق إلى الطعام اللبناني الأصيل.',
+    },
+    {
+      year: 'اليوم',
+      titleEn: 'A Living Legacy',
+      titleAr: 'الإرث الحي',
+      textEn:
+        'Over a decade of crafting memories in Azaiba — every dish a love letter to Lebanon, every table a piece of Beirut.',
+      textAr:
+        'أكثر من عقد من صنع الذكريات في العذيبة — كل طبق رسالة حب إلى لبنان، وكل مائدة قطعة من بيروت.',
+    },
+  ],
+  heroSlides: [
+    {
+      img: `${BASE_IMG}/photo-1414235077428-338989a2e8c0?w=1920&q=85&auto=format&fit=crop`,
+      headlineEn: 'Taste of Beirut',
+      headlineAr: 'نكهة بيروت',
+      subEn: 'Authentic Lebanese cuisine in the heart of Azaiba, Muscat',
+      subAr: 'مطبخ لبناني أصيل في قلب العذيبة، مسقط',
+    },
+    {
+      img: `${BASE_IMG}/photo-1544025162-d76694265947?w=1920&q=85&auto=format&fit=crop`,
+      headlineEn: 'Crafted With Soul',
+      headlineAr: 'صُنع بروح',
+      subEn: 'Slow-cooked meats, hand-pressed mezze, daily-fresh bread',
+      subAr: 'لحوم مطهوة ببطء، مزة طازجة، خبز يُعجن يومياً',
+    },
+    {
+      img: `${BASE_IMG}/photo-1567353887895-7f25ac1e0b4b?w=1920&q=85&auto=format&fit=crop`,
+      headlineEn: 'Gather & Share',
+      headlineAr: 'اجتمعوا وتشاركوا',
+      subEn: 'The Lebanese table — generous, warm, unforgettable',
+      subAr: 'المائدة اللبنانية — سخية، دافئة، لا تُنسى',
+    },
+  ],
+  galleryImages: [
+    {
+      src: `${BASE_IMG}/photo-1559339352-11d035aa65de?w=900&q=85&auto=format&fit=crop`,
+      caption: 'The Ambiance',
+    },
+    {
+      src: `${BASE_IMG}/photo-1414235077428-338989a2e8c0?w=900&q=85&auto=format&fit=crop`,
+      caption: 'The Dining Room',
+    },
+    {
+      src: `${BASE_IMG}/photo-1600891964092-4316c288032e?w=900&q=85&auto=format&fit=crop`,
+      caption: 'From The Kitchen',
+    },
+    {
+      src: `${BASE_IMG}/photo-1574484284002-952d92456975?w=900&q=85&auto=format&fit=crop`,
+      caption: 'The Mezze',
+    },
+    {
+      src: `${BASE_IMG}/photo-1517248135467-4c7edcad34c4?w=900&q=85&auto=format&fit=crop`,
+      caption: 'The Evenings',
+    },
+  ],
+  testimonials: [
+    {
+      nameEn: 'Mohammed Al Balushi',
+      nameAr: 'محمد البلوشي',
+      rating: 5,
+      textEn: 'The best Lebanese restaurant in Muscat, hands down. The mezze platter alone is worth the trip — fresh, generous, and absolutely authentic.',
+      textAr: 'أفضل مطعم لبناني في مسقط بلا منافس. طبق المزة وحده يستحق الزيارة — طازج، كريم، وأصيل تماماً.',
+      service: 'Mixed Mezze',
+    },
+    {
+      nameEn: 'Sarah Al Harthi',
+      nameAr: 'سارة الحارثية',
+      rating: 5,
+      textEn: 'We come here every Friday for family lunch. The kafta and shish tawook are incredible. The service is warm — they make you feel like family.',
+      textAr: 'نأتي هنا كل جمعة لغداء العائلة. الكفتة والشيش طاووق رائعان. الخدمة دافئة — يجعلونك تشعر بالعائلة.',
+      service: 'Family Dining',
+    },
+    {
+      nameEn: 'Faisal Al Mawali',
+      nameAr: 'فيصل المعولي',
+      rating: 5,
+      textEn: 'Discovered Al Jood last year and never looked back. The hummus is the creamiest I\'ve had outside Lebanon. Authentic through and through.',
+      textAr: 'اكتشفت الجود العام الماضي ولم أتراجع منذ ذلك الحين. الحمص الأكثر كريمية التي تذوقتها خارج لبنان. أصيل من الألف إلى الياء.',
+      service: 'Hummus Tahini',
+    },
+    {
+      nameEn: 'Laila Rahman',
+      nameAr: 'ليلى رحمان',
+      rating: 5,
+      textEn: 'The knafeh here is the real deal. We ended our anniversary dinner with it and it was the perfect finale. A hidden gem in Azaiba.',
+      textAr: 'الكنافة هنا حقيقية. ختمنا بها عشاء ذكرى زواجنا وكانت النهاية المثالية. جوهرة خفية في العذيبة.',
+      service: 'Knafeh Bil Jibn',
+    },
+  ],
+  dishOrbitImg: `${BASE_IMG}/photo-1577303935007-0d306ee638cf?w=600&q=85&auto=format&fit=crop`,
+  storyBg: `${BASE_IMG}/photo-1600891964092-4316c288032e?w=1400&q=80&auto=format&fit=crop`,
+  reservationBg: `${BASE_IMG}/photo-1414235077428-338989a2e8c0?w=1400&q=80&auto=format&fit=crop`,
+  mapsEmbedSrc:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.0!2d58.3706387!3d23.5933674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8e019588dcb5e5%3A0x9c1e5c3c581a8bd9!2sAl%20Jood%20Lebanese%20Restaurant%20Azaiba!5e0!3m2!1sen!2som!4v1718000000000!5m2!1sen!2som',
+  mapsUrl: 'https://maps.app.goo.gl/ZdW2GeCJNzEhE5va7',
+};
+
+export const GOLD = '#C9A96E';
+export const GOLD_LIGHT = '#E8C87A';
+export const DARK_BG = '#0A0908';
+export const CREAM = '#FAF7F2';

@@ -15,6 +15,7 @@ import { PremiumDemoApp } from './premium-demo/PremiumDemoApp'
 import { TawaheenApp } from './tawaheen-alhawa/TawaheenApp'
 import { TurkishHouseApp } from './turkish-house/TurkishHouseApp'
 import { TajRestaurantApp } from './taj-restaurant/TajRestaurantApp'
+import { AlJoodApp } from './al-jood-azaiba/AlJoodApp'
 
 const PREVIEW = new URLSearchParams(window.location.search).get('preview');
 
@@ -49,11 +50,22 @@ function isTajRestaurantHost() {
   );
 }
 
+function isAlJoodHost() {
+  if (typeof window === 'undefined') return false;
+  const h = window.location.hostname.toLowerCase();
+  return (
+    h === 'aljood.nounmotion.store' ||
+    h.includes('nounmotion-aljood.') ||
+    h.startsWith('nounmotion-aljood')
+  );
+}
+
 function App() {
   if (PREVIEW === 'premium-demo') return <PremiumDemoApp />;
   if (PREVIEW === 'tawaheen-alhawa' || isTawaheenHost()) return <TawaheenApp />;
   if (PREVIEW === 'turkish-house' || isTurkishHouseHost()) return <TurkishHouseApp />;
   if (PREVIEW === 'taj-restaurant' || isTajRestaurantHost()) return <TajRestaurantApp />;
+  if (PREVIEW === 'al-jood-azaiba' || isAlJoodHost()) return <AlJoodApp />;
 
   return (
     <LangProvider>
