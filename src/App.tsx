@@ -22,6 +22,7 @@ import { NabuCafeApp } from './nabu-cafe/NabuCafeApp'
 import { FoodparkAsianApp } from './foodpark-asian/FoodparkAsianApp'
 import { SukoonApp } from './sukoon-muscat/SukoonApp'
 import { MarhabaRuwiApp } from './marhaba-ruwi/MarhabaRuwiApp'
+import { AlMajdDentalApp } from './al-majd-dental/AlMajdDentalApp'
 
 const PREVIEW = new URLSearchParams(window.location.search).get('preview');
 
@@ -111,6 +112,7 @@ function isAlJoodHost() {
   const h = window.location.hostname.toLowerCase();
   return (
     h === 'aljood.nounmotion.store' ||
+    h === 'al-jood.nounmotion.store' ||
     h.includes('nounmotion-aljood.') ||
     h.startsWith('nounmotion-aljood')
   );
@@ -126,6 +128,17 @@ function isMarhabaHost() {
   );
 }
 
+function isAlMajdDentalHost() {
+  if (typeof window === 'undefined') return false;
+  const h = window.location.hostname.toLowerCase();
+  return (
+    h === 'almajd.nounmotion.store' ||
+    h === 'al-majd.nounmotion.store' ||
+    h.includes('nounmotion-almajd.') ||
+    h.startsWith('nounmotion-almajd')
+  );
+}
+
 function App() {
   if (PREVIEW === 'premium-demo') return <PremiumDemoApp />;
   if (PREVIEW === 'tawaheen-alhawa' || isTawaheenHost()) return <TawaheenApp />;
@@ -138,6 +151,7 @@ function App() {
   if (PREVIEW === 'nabu-cafe' || isNabuHost()) return <NabuCafeApp />;
   if (PREVIEW === 'sukoon-muscat' || isSukoonHost()) return <SukoonApp />;
   if (PREVIEW === 'marhaba-ruwi' || isMarhabaHost()) return <MarhabaRuwiApp />;
+  if (PREVIEW === 'al-majd-dental' || isAlMajdDentalHost()) return <AlMajdDentalApp />;
 
   return (
     <LangProvider>
