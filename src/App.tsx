@@ -19,6 +19,9 @@ import { AroosBaharApp } from './aroos-al-bahar/AroosBaharApp'
 import { MiskRestaurantApp } from './misk-restaurant/MiskRestaurantApp'
 import { AlJoodApp } from './al-jood-azaiba/AlJoodApp'
 import { NabuCafeApp } from './nabu-cafe/NabuCafeApp'
+import { FoodparkAsianApp } from './foodpark-asian/FoodparkAsianApp'
+import { SukoonApp } from './sukoon-muscat/SukoonApp'
+import { MarhabaRuwiApp } from './marhaba-ruwi/MarhabaRuwiApp'
 
 const PREVIEW = new URLSearchParams(window.location.search).get('preview');
 
@@ -83,6 +86,26 @@ function isNabuHost() {
   );
 }
 
+function isSukoonHost() {
+  if (typeof window === 'undefined') return false;
+  const h = window.location.hostname.toLowerCase();
+  return (
+    h === 'sukoon.nounmotion.store' ||
+    h.includes('nounmotion-sukoon.') ||
+    h.startsWith('nounmotion-sukoon')
+  );
+}
+
+function isFoodparkHost() {
+  if (typeof window === 'undefined') return false;
+  const h = window.location.hostname.toLowerCase();
+  return (
+    h === 'foodpark.nounmotion.store' ||
+    h.includes('nounmotion-foodpark.') ||
+    h.startsWith('nounmotion-foodpark')
+  );
+}
+
 function isAlJoodHost() {
   if (typeof window === 'undefined') return false;
   const h = window.location.hostname.toLowerCase();
@@ -90,6 +113,16 @@ function isAlJoodHost() {
     h === 'aljood.nounmotion.store' ||
     h.includes('nounmotion-aljood.') ||
     h.startsWith('nounmotion-aljood')
+  );
+}
+
+function isMarhabaHost() {
+  if (typeof window === 'undefined') return false;
+  const h = window.location.hostname.toLowerCase();
+  return (
+    h === 'marhaba.nounmotion.store' ||
+    h.includes('nounmotion-marhaba.') ||
+    h.startsWith('nounmotion-marhaba')
   );
 }
 
@@ -101,7 +134,10 @@ function App() {
   if (PREVIEW === 'aroos-al-bahar' || isAroosHost()) return <AroosBaharApp />;
   if (PREVIEW === 'misk-restaurant' || isMiskHost()) return <MiskRestaurantApp />;
   if (PREVIEW === 'al-jood-azaiba' || isAlJoodHost()) return <AlJoodApp />;
+  if (PREVIEW === 'foodpark-asian' || isFoodparkHost()) return <FoodparkAsianApp />;
   if (PREVIEW === 'nabu-cafe' || isNabuHost()) return <NabuCafeApp />;
+  if (PREVIEW === 'sukoon-muscat' || isSukoonHost()) return <SukoonApp />;
+  if (PREVIEW === 'marhaba-ruwi' || isMarhabaHost()) return <MarhabaRuwiApp />;
 
   return (
     <LangProvider>

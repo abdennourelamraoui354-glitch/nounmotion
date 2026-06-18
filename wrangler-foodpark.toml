@@ -1,0 +1,8 @@
+name = "foodpark-site"
+main = "worker-foodpark.js"
+compatibility_date = "2024-01-01"
+account_id = "26638150902bc9aee806c25fb3a1a06c"
+
+[[routes]]
+pattern = "foodpark.nounmotion.store"
+custom_domain = true
