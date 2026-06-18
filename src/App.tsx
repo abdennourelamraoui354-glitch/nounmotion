@@ -21,6 +21,7 @@ function isTawaheenHost() {
   const h = window.location.hostname.toLowerCase();
   return (
     h === 'tawaheen.nounmotion.store' ||
+    h === 'tah.nounmotion.store' ||
     h.includes('nounmotion-tawaheen.') ||
     h.startsWith('nounmotion-tawaheen')
   );
